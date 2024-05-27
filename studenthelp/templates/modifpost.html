@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier le Poste : {{ post.title }}</title>
+    <!-- Ajouter le lien vers Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Ajouter une feuille de style CSS personnalisée si nécessaire -->
+    <style>
+        /* Votre CSS personnalisé peut être ajouté ici */
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Utilisation des classes Bootstrap pour styliser le formulaire -->
+        <h1 class="mt-5 mb-4">Êtes-vous sûr de vouloir Modifier le poste : {{ post.title }} ?</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Oui, Modifier</button>
+            </div>
+        </form>
+    </div>
+    <!-- Ajouter le lien vers Bootstrap JavaScript (si nécessaire pour les fonctionnalités avancées) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

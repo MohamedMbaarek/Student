@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Posts</title>
+</head>
+<body>
+    <h1>Liste des Posts</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <p>Posted on: {{ post.date_posted }}</p>
+        </div>
+    {% endfor %}
+    <a href="{% url 'studenthelp:post_create' %}">Créer un nouveau post</a>
+</body>
+</html>

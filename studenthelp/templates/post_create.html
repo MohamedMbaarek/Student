@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un Post</title>
+</head>
+<body>
+    <h1>Créer un nouveau Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Publier</button>
+    </form>
+</body>
+</html>
